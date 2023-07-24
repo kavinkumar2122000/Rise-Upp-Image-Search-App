@@ -1,38 +1,113 @@
-.App {
+/* App.css */
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+.app {
+  padding: 20px;
+}
+
+header {
   text-align: center;
+  margin-bottom: 20px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+header input[type='text'] {
+  padding: 10px;
+  width: 400px;
+  margin-top: 10px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 10px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.image-card {
+  cursor: pointer;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.image-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.image-card.unselected img {
+  filter: blur(3px);
+}
+
+.image-card.selected img {
+  transform: scale(1.2);
+  filter: none;
+}
+
+.popupbox-content img {
+  width: 100%;
+  height: auto;
+}
+
+.loading {
+  text-align: center;
+  padding: 20px;
+}
+
+/* Updated CSS for rectangle boxes */
+
+.boxes-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.box {
+  width: 150px;
+  height: 50px;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  background-color: #ec8454; /* Blue color */
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.search-box-left {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.search-box-left input[type='text'] {
+  padding: 10px;
+  width: 200px;
+  margin-right: 10px;
+}
+
+.search-icon {
+  margin-left: 10px;
+  margin-right: 5px;
+  color: #555;
+  cursor: pointer;
+}
+
+.search-icon i {
+  font-size: 18px;
+}
+
+.search-box button {
+  padding: 10px;
+  background-color: #e4180a;
   color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
